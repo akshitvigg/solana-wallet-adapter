@@ -15,12 +15,14 @@ function App() {
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className=" h-screen bg-fuchsia-700  ">
-            <div className=" flex">
-              <WalletMultiButton />
-              <WalletDisconnectButton />
+          <div className=" h-screen flex items-center justify-center bg-[#0b0a0a]  ">
+            <div>
+              <div className="pb-3 gap-2 flex">
+                <WalletMultiButton />
+                <WalletDisconnectButton />
+              </div>
+              <Airdrop />
             </div>
-            <Airdrop />
           </div>
         </WalletModalProvider>
       </WalletProvider>
