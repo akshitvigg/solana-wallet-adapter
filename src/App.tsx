@@ -14,7 +14,7 @@ function App() {
   return (
     <ConnectionProvider
       endpoint={
-        "https://shape-mainnet.g.alchemy.com/v2/bGqAplTTOOO24SOQZtONwbS7I4jC9K2u"
+        "https://solana-devnet.g.alchemy.com/v2/96jm1iOy45zh-8G5TR0w1pGjSPVvUmmQ"
       }
     >
       <WalletProvider wallets={[]} autoConnect>
