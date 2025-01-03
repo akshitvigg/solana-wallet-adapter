@@ -8,6 +8,7 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
+import { Airdrop } from "./components/airdrop";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
               <WalletMultiButton />
               <WalletDisconnectButton />
             </div>
-            adsdsd
+            <Airdrop />
           </div>
         </WalletModalProvider>
       </WalletProvider>
