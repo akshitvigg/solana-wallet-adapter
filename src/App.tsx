@@ -3,6 +3,7 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import {
+  WalletDisconnectButton,
   WalletModalProvider,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
@@ -14,7 +15,10 @@ function App() {
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className=" h-screen bg-fuchsia-700  ">
-            <WalletMultiButton />
+            <div className=" flex">
+              <WalletMultiButton />
+              <WalletDisconnectButton />
+            </div>
             adsdsd
           </div>
         </WalletModalProvider>
