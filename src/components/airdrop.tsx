@@ -2,7 +2,13 @@ export const Airdrop = () => {
   return (
     <div>
       <input type="text" placeholder="SOL" />
-      <button>Send</button>
+      <button
+        onClick={() => {
+          alert("sended");
+        }}
+      >
+        Send
+      </button>
     </div>
   );
 };
