@@ -36,7 +36,7 @@ export const Airdrop = () => {
         className="text-white ml-3 font-bold rounded-sm bg-[#512da8] p-1.5 px-9"
         onClick={sendAirdrop}
       >
-        Send
+        Get
       </button>
     </div>
   );
