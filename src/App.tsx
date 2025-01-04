@@ -10,6 +10,7 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { Airdrop } from "./components/airdrop";
 import { Getbalance } from "./components/getbalance";
+import { TransferSol } from "./components/transferSol";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <WalletDisconnectButton />
               </div>
               <Airdrop />
+              <TransferSol />
               <Getbalance />
             </div>
           </div>
