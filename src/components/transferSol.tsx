@@ -14,20 +14,18 @@ export const TransferSol = () => {
   const { connection } = useConnection();
 
   const transferSol = async () => {
-    try {
-      const transaction = new Transaction();
+    const transaction = new Transaction();
 
+    transaction.add(
       SystemProgram.transfer({
         //@ts-ignore
         fromPubkey: wallet.publicKey,
         toPubkey: new PublicKey(to),
         lamports: amount * LAMPORTS_PER_SOL,
-      });
-      await wallet.sendTransaction(transaction, connection);
-      alert("sol sended");
-    } catch (e) {
-      alert("error while sending sol");
-    }
+      })
+    );
+
+    alert("sol sended");
   };
 
   return (
