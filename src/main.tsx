@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App.tsx";
 import { Buffer } from "buffer";
 
-// Make Buffer globally available in the browser
 window.Buffer = Buffer;
 
 createRoot(document.getElementById("root")!).render(
