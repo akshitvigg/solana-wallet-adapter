@@ -25,6 +25,8 @@ export const TransferSol = () => {
       })
     );
 
+    await wallet.sendTransaction(transaction, connection);
+
     alert("sol sended");
   };
 
