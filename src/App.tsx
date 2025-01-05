@@ -23,7 +23,7 @@ function App() {
         <WalletModalProvider>
           <div className=" h-screen flex items-center justify-center bg-[#0b0a0a]  ">
             <div>
-              <div className="pb-3 gap-2 flex">
+              <div className="pb-2 gap-2 flex">
                 <WalletMultiButton />
                 <WalletDisconnectButton />
               </div>
