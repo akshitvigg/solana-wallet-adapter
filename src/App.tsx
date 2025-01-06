@@ -18,8 +18,8 @@ function App() {
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className=" h-screen flex items-center justify-center bg-[#0b0a0a]  ">
-            <div>
+          <div className=" min-h-screen flex items-center justify-center bg-[url(../public/bg.png)] ">
+            <div className=" ">
               <div className="pb-2 gap-2 flex">
                 <WalletMultiButton />
                 <WalletDisconnectButton />

@@ -28,7 +28,9 @@ export const Signmsg = () => {
   return (
     <div>
       <input ref={inputRef} type="text" name="" id="" />
-      <button onClick={signmsg}>Sign</button>
+      <button onClick={signmsg} className=" bg-slate-50 text-black">
+        Sign
+      </button>
     </div>
   );
 };
