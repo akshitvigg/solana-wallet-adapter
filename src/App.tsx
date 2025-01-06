@@ -23,13 +23,13 @@ function App() {
         <WalletModalProvider>
           <div className=" min-h-screen flex items-center justify-center bg-[url(../public/bg.png)] ">
             <div className=" ">
-              <div className="pb-2 gap-2 flex">
+              <div className="pb-2 gap-2 flex justify-center ">
                 <WalletMultiButton />
                 <WalletDisconnectButton />
               </div>
-              <div className=" bg-black w-96 flex justify-evenly">
+              <div className=" bg-zinc-800 rounded-md  py-1.5 w-[655px] flex justify-center">
                 <button
-                  className=" bg-white"
+                  className=" py-2 px-10 mr-1 rounded-md hover:bg-zinc-700 text-white "
                   onClick={() => {
                     setType("airdrop");
                   }}
@@ -37,7 +37,7 @@ function App() {
                   airdrop
                 </button>
                 <button
-                  className=" bg-white"
+                  className=" px-10 mr-1 rounded-md bg-white"
                   onClick={() => {
                     setType("transaction");
                   }}
@@ -45,7 +45,7 @@ function App() {
                   transaction
                 </button>
                 <button
-                  className=" bg-white"
+                  className=" px-10 mr-1 rounded-md bg-white"
                   onClick={() => {
                     setType("sign");
                   }}
@@ -53,7 +53,7 @@ function App() {
                   sign message
                 </button>
                 <button
-                  className=" bg-white"
+                  className=" px-10 mr-1 rounded-md bg-white"
                   onClick={() => {
                     setType("balance");
                   }}
