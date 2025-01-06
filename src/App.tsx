@@ -53,7 +53,7 @@ function App() {
                   sign message
                 </button>
                 <button
-                  className=" px-10 mr-1 rounded-md bg-white"
+                  className=" px-10 mr-1 rounded-md"
                   onClick={() => {
                     setType("balance");
                   }}
