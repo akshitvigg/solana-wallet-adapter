@@ -15,19 +15,23 @@ export const TransferSol = () => {
 
   const transferSol = async () => {
     const transaction = new Transaction();
+    try {
+      transaction.add(
+        SystemProgram.transfer({
+          //@ts-ignore
+          fromPubkey: wallet.publicKey,
+          toPubkey: new PublicKey(to),
+          lamports: amount * LAMPORTS_PER_SOL,
+        })
+      );
 
-    transaction.add(
-      SystemProgram.transfer({
-        //@ts-ignore
-        fromPubkey: wallet.publicKey,
-        toPubkey: new PublicKey(to),
-        lamports: amount * LAMPORTS_PER_SOL,
-      })
-    );
+      await wallet.sendTransaction(transaction, connection);
 
-    await wallet.sendTransaction(transaction, connection);
-
-    alert("sol sended");
+      alert("sol sended");
+    } catch (e) {
+      console.log(e);
+      alert("error occured while sending sol");
+    }
   };
 
   return (
