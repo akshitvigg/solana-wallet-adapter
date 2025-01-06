@@ -25,9 +25,10 @@ export const Signmsg = () => {
     alert(`message signature ${bs58.encode(signature)}`);
   };
 
-  return;
-  <div>
-    <input ref={inputRef} type="text" name="" id="" />
-    <button onClick={signmsg}>Sign</button>
-  </div>;
+  return (
+    <div>
+      <input ref={inputRef} type="text" name="" id="" />
+      <button onClick={signmsg}>Sign</button>
+    </div>
+  );
 };
