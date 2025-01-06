@@ -14,11 +14,7 @@ import { TransferSol } from "./components/transferSol";
 
 function App() {
   return (
-    <ConnectionProvider
-      endpoint={
-        "https://solana-devnet.g.alchemy.com/v2/96jm1iOy45zh-8G5TR0w1pGjSPVvUmmQ"
-      }
-    >
+    <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className=" h-screen flex items-center justify-center bg-[#0b0a0a]  ">
