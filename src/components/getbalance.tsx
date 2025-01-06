@@ -8,14 +8,26 @@ export const Getbalance = () => {
   const [balance, setBalance] = useState<number>(0);
 
   useEffect(() => {
+    let accountChange: number | undefined;
+
     const fetchBalance = async () => {
       if (wallet.publicKey) {
         const balance = await connection.getBalance(wallet.publicKey);
         setBalance(balance / LAMPORTS_PER_SOL);
       }
     };
-    fetchBalance();
-  }, [wallet.publicKey]);
+    if (wallet.publicKey) {
+      fetchBalance();
+
+      accountChange = connection.onAccountChange(
+        wallet.publicKey,
+        (updatedInfo) => {
+          const lamports = updatedInfo.lamports;
+          setBalance(lamports / LAMPORTS_PER_SOL);
+        }
+      );
+    }
+  }, [wallet.publicKey, connection]);
 
   return <div className=" text-white">{balance} SOL</div>;
 };
