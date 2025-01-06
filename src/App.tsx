@@ -27,7 +27,7 @@ function App() {
                 <WalletMultiButton />
                 <WalletDisconnectButton />
               </div>
-              <div>
+              <div className=" bg-black w-96 flex justify-evenly">
                 <button
                   className=" bg-white"
                   onClick={() => {
