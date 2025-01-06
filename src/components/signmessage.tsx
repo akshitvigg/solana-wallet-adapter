@@ -1,7 +1,9 @@
 import { useWallet } from "@solana/wallet-adapter-react";
+import { useRef } from "react";
 
 export const Signmsg = () => {
   const { signMessage, publicKey } = useWallet();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const signmsg = () => {
     if (!publicKey) {
@@ -16,7 +18,7 @@ export const Signmsg = () => {
 
   return;
   <div>
-    <input type="text" name="" id="" />
+    <input ref={inputRef} type="text" name="" id="" />
     <button>Sign</button>
   </div>;
 };
