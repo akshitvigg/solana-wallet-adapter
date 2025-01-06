@@ -28,6 +28,6 @@ export const Signmsg = () => {
   return;
   <div>
     <input ref={inputRef} type="text" name="" id="" />
-    <button>Sign</button>
+    <button onClick={signmsg}>Sign</button>
   </div>;
 };
