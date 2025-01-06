@@ -1,5 +1,6 @@
 import {
   ConnectionProvider,
+  useAnchorWallet,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import {
@@ -12,8 +13,10 @@ import { Airdrop } from "./components/airdrop";
 import { Getbalance } from "./components/getbalance";
 import { TransferSol } from "./components/transferSol";
 import { Signmsg } from "./components/signmessage";
+import { useState } from "react";
 
 function App() {
+  const [type, setType] = useState("");
   return (
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
@@ -24,10 +27,44 @@ function App() {
                 <WalletMultiButton />
                 <WalletDisconnectButton />
               </div>
-              <Airdrop />
-              <TransferSol />
-              <Getbalance />
-              <Signmsg />
+              <div>
+                <button
+                  className=" bg-white"
+                  onClick={() => {
+                    setType("airdrop");
+                  }}
+                >
+                  airdrop
+                </button>
+                <button
+                  className=" bg-white"
+                  onClick={() => {
+                    setType("transaction");
+                  }}
+                >
+                  transaction
+                </button>
+                <button
+                  className=" bg-white"
+                  onClick={() => {
+                    setType("sign");
+                  }}
+                >
+                  sign message
+                </button>
+                <button
+                  className=" bg-white"
+                  onClick={() => {
+                    setType("balance");
+                  }}
+                >
+                  getBalance
+                </button>
+              </div>
+              {type === "airdrop" && <Airdrop />}
+              {type === "transaction" && <TransferSol />}
+              {type === "balance" && <Getbalance />}
+              {type === "sign" && <Signmsg />}
             </div>
           </div>
         </WalletModalProvider>
