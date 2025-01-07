@@ -31,10 +31,19 @@ export const Getbalance = () => {
   }, [wallet.publicKey, connection]);
 
   return (
-    <div className=" flex justify-center items-center mt-4 text-white">
-      <img src={solLogo} width={70} alt="" />
-      fdfdf <br />
-      {balance} SOL
+    <div className="flex justify-center mt-4 text-white">
+      <div className="bg-zinc-800 backdrop-blur-xl rounded-xl w-64 p-4">
+        <div className="flex justify-center items-center space-x-2">
+          <img src={solLogo} width={60} alt="Solana Logo" />
+
+          <p className="text-center">
+            <p className=" text-left text-lg tracking-widest font-bold">
+              SOLANA
+            </p>
+            <span className="text-lg font-bold">{balance}</span> SOL
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
