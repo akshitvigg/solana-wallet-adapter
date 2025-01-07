@@ -65,7 +65,7 @@ function App() {
                 </button>
                 <button
                   className={` px-10 mr-1 rounded-md ${
-                    type === "sign"
+                    type === "balance"
                       ? " bg-white text-black"
                       : "hover:bg-zinc-700 text-white"
                   }`}
