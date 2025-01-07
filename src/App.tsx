@@ -15,10 +15,12 @@ import { Signmsg } from "./components/signmessage";
 import { useState } from "react";
 import solanaLogo from "/solanaLogo.png";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import { Switch } from "@/components/ui/switch";
 import ShadcnSwitch from "./components/switch";
 
 function App() {
   const [type, setType] = useState("");
+  const [themeType, setThemeType] = useState<boolean>(false);
   return (
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
@@ -27,10 +29,14 @@ function App() {
             <div className=" flex justify-center">
               <div className=" flex justify-between  py-8 bg-zinc-900/40 border border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
                 <img className="ml-10" src={solanaLogo} width={150} alt="" />
-                <div className=" flex  mr-10">
-                  <IconMoon color=" white" />
-                  <ShadcnSwitch />
-                  <IconSun color=" white" />
+                <div className=" flex items-center gap-2  mr-10">
+                  <IconMoon color={` ${!themeType ? "yellow" : "white"}`} />
+                  <Switch
+                    onClick={() => {
+                      setThemeType(!themeType);
+                    }}
+                  />
+                  <IconSun color={` ${themeType ? "yellow" : "white"}`} />
                 </div>
               </div>
             </div>
