@@ -57,7 +57,7 @@ export const TransferSol = () => {
           </div>
           <button
             onClick={transferSol}
-            className=" mt-2  ml-3 font-bold rounded-sm bg-[#512da8] p-1.5 px-9"
+            className=" mt-2  ml-3 text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8]  px-12"
           >
             Send
           </button>
