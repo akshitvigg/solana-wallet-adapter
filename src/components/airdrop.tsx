@@ -25,10 +25,10 @@ export const Airdrop = () => {
   };
 
   return (
-    <div>
+    <div className=" mt-2">
       <input
         onChange={(e) => setInputVal(Number(e.target.value))}
-        className="rounded-sm p-1.5"
+        className=" bg-transparent border rounded-sm p-1.5"
         type="text"
         placeholder="SOL"
       />
