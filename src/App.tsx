@@ -16,7 +16,6 @@ import { useState } from "react";
 import solanaLogo from "/solanaLogo.png";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { Switch } from "@/components/ui/switch";
-import ShadcnSwitch from "./components/switch";
 
 function App() {
   const [type, setType] = useState("");
