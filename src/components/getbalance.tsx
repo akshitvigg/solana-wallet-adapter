@@ -32,7 +32,7 @@ export const Getbalance = () => {
 
   return (
     <div className="flex justify-center mt-4 text-white">
-      <div className="bg-zinc-800 backdrop-blur-xl rounded-xl w-64 p-4">
+      <div className="bg-zinc-800 border-2 border-zinc-700 backdrop-blur-xl rounded-xl w-64 p-4">
         <div className="flex justify-center items-center space-x-2">
           <img src={solLogo} width={60} alt="Solana Logo" />
 
