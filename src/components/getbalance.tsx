@@ -36,11 +36,11 @@ export const Getbalance = () => {
         <div className="flex justify-center items-center space-x-2">
           <img src={solLogo} width={60} alt="Solana Logo" />
 
-          <p className="text-center">
+          <p>
             <p className=" text-left text-lg tracking-widest font-bold">
               SOLANA
             </p>
-            <span className="text-lg font-bold">{balance}</span> SOL
+            <span className="text-center text-lg font-bold">{balance}</span> SOL
           </p>
         </div>
       </div>
