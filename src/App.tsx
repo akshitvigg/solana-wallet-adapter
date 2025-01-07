@@ -28,7 +28,11 @@ function App() {
               </div>
               <div className=" bg-zinc-800 rounded-md  py-1.5 w-[655px] flex justify-center">
                 <button
-                  className={` py-2 px-10 mr-1 rounded-md hover:bg-zinc-700 text-white {}`}
+                  className={` py-2 px-10 mr-1 rounded-md ${
+                    type === "airdrop"
+                      ? " bg-white text-black"
+                      : "hover:bg-zinc-700 text-white"
+                  }`}
                   onClick={() => {
                     setType("airdrop");
                   }}
@@ -36,7 +40,11 @@ function App() {
                   airdrop
                 </button>
                 <button
-                  className=" px-10 mr-1 rounded-md hover:bg-zinc-700 text-white "
+                  className={` px-10 mr-1 rounded-md ${
+                    type === "transaction"
+                      ? " bg-white text-black"
+                      : "hover:bg-zinc-700 text-white"
+                  }`}
                   onClick={() => {
                     setType("transaction");
                   }}
@@ -44,7 +52,11 @@ function App() {
                   transaction
                 </button>
                 <button
-                  className=" px-10 mr-1 rounded-md hover:bg-zinc-700 text-white "
+                  className={` px-10 mr-1 rounded-md ${
+                    type === "transaction"
+                      ? " bg-white text-black"
+                      : "hover:bg-zinc-700 text-white"
+                  }`}
                   onClick={() => {
                     setType("sign");
                   }}
