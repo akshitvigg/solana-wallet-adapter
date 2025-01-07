@@ -1,6 +1,5 @@
 import {
   ConnectionProvider,
-  useAnchorWallet,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import {
