@@ -26,8 +26,13 @@ export const Signmsg = () => {
   };
 
   return (
-    <div className=" mt-2">
-      <input ref={inputRef} type="text" name="" id="" />
+    <div className=" text-white  mt-2">
+      <p className="">Type Your Message To Be Signed</p>
+      <input
+        className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg "
+        ref={inputRef}
+        type="text"
+      />
       <button onClick={signmsg} className=" bg-slate-50 text-black">
         Sign
       </button>
