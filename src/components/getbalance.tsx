@@ -31,8 +31,9 @@ export const Getbalance = () => {
   }, [wallet.publicKey, connection]);
 
   return (
-    <div className=" mt-4 text-white">
-      <img src={solLogo} alt="" />
+    <div className=" flex justify-center items-center mt-4 text-white">
+      <img src={solLogo} width={70} alt="" />
+      fdfdf <br />
       {balance} SOL
     </div>
   );
