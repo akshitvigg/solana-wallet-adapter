@@ -13,6 +13,9 @@ import { Getbalance } from "./components/getbalance";
 import { TransferSol } from "./components/transferSol";
 import { Signmsg } from "./components/signmessage";
 import { useState } from "react";
+import solanaLogo from "/solanaLogo.png";
+import { IconMoon, IconSun } from "@tabler/icons-react";
+import ShadcnSwitch from "./components/switch";
 
 function App() {
   const [type, setType] = useState("");
@@ -22,8 +25,13 @@ function App() {
         <WalletModalProvider>
           <div className=" font-poppins  min-h-screen  bg-[url(../public/bg.png)] ">
             <div className=" flex justify-center">
-              <div className="  py-8 bg-zinc-900/40 border border-gray-800 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
-                d
+              <div className=" flex justify-between  py-8 bg-zinc-900/40 border border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
+                <img className="ml-10" src={solanaLogo} width={150} alt="" />
+                <div className=" flex  mr-10">
+                  <IconMoon color=" white" />
+                  <ShadcnSwitch />
+                  <IconSun color=" white" />
+                </div>
               </div>
             </div>
             <div className="flex pt-44 justify-center ">
