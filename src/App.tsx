@@ -48,9 +48,9 @@ function App() {
                   <WalletMultiButton />
                   <WalletDisconnectButton />
                 </div>
-                <div className=" bg-zinc-800 rounded-lg mt-6   py-2.5 w-[690px] flex justify-center">
+                <div className=" bg-zinc-800 rounded-md mt-6   py-2.5 w-[690px] flex justify-center">
                   <button
-                    className={` py-2 px-10 mr-1 rounded-lg ${
+                    className={` py-2 px-10 mr-1 rounded-md ${
                       type === "airdrop"
                         ? " bg-white text-black"
                         : "hover:bg-zinc-700 text-white"
