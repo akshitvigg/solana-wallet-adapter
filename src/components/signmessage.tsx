@@ -26,7 +26,7 @@ export const Signmsg = () => {
   };
 
   return (
-    <div>
+    <div className=" mt-2">
       <input ref={inputRef} type="text" name="" id="" />
       <button onClick={signmsg} className=" bg-slate-50 text-black">
         Sign
