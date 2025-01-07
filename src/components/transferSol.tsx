@@ -37,7 +37,7 @@ export const TransferSol = () => {
   return (
     <div className=" text-white  ">
       <p className=" text-center text-3xl font-bold"> Send Some Sol </p>
-      <div className=" flex mt-4 justify-center">
+      <div className=" flex mt-2 justify-center">
         <div>
           <div className=" pt-2 ">
             <input
@@ -55,12 +55,14 @@ export const TransferSol = () => {
               placeholder="Amount"
             />
           </div>
-          <button
-            onClick={transferSol}
-            className=" mt-2  ml-3 text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8]  px-12"
-          >
-            Send
-          </button>
+          <div className=" flex justify-center">
+            <button
+              onClick={transferSol}
+              className=" mt-2   text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] py-2.5  w-96"
+            >
+              Send
+            </button>
+          </div>
         </div>
       </div>
     </div>
