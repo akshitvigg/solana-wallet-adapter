@@ -25,15 +25,15 @@ export const Airdrop = () => {
   };
 
   return (
-    <div className=" mt-2">
+    <div className=" text-white flex justify-center pt-8 mt-2">
       <input
         onChange={(e) => setInputVal(Number(e.target.value))}
-        className=" bg-transparent border rounded-sm p-1.5"
+        className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
         type="text"
         placeholder="SOL"
       />
       <button
-        className="text-white ml-3 font-bold rounded-sm bg-[#512da8] p-1.5 px-9"
+        className="text-white  ml-3 text-xl hover:bg-[#1a1f2e] font-bold rounded-lg bg-[#512da8]  px-12"
         onClick={sendAirdrop}
       >
         Get
