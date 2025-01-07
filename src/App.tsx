@@ -28,7 +28,7 @@ function App() {
               </div>
               <div className=" bg-zinc-800 rounded-md  py-1.5 w-[655px] flex justify-center">
                 <button
-                  className=" py-2 px-10 mr-1 rounded-md hover:bg-zinc-700 text-white active:bg-white active:text-black a "
+                  className={` py-2 px-10 mr-1 rounded-md hover:bg-zinc-700 text-white {}`}
                   onClick={() => {
                     setType("airdrop");
                   }}
