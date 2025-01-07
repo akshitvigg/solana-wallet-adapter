@@ -35,25 +35,34 @@ export const TransferSol = () => {
   };
 
   return (
-    <div className=" mt-2">
-      <input
-        onChange={(e) => setTo(e.target.value)}
-        className=" mr-2 rounded-sm p-1.5"
-        type="text"
-        placeholder="to"
-      />
-      <input
-        onChange={(e) => setAmount(Number(e.target.value))}
-        className="rounded-sm p-1.5"
-        type="text"
-        placeholder="Amount"
-      />
-      <button
-        onClick={transferSol}
-        className="text-white ml-3 font-bold rounded-sm bg-[#512da8] p-1.5 px-9"
-      >
-        Send
-      </button>
+    <div className=" text-white  ">
+      <p className=" text-center text-3xl font-bold"> Send Some Sol </p>
+      <div className=" flex mt-4 justify-center">
+        <div>
+          <div className=" pt-2 ">
+            <input
+              onChange={(e) => setTo(e.target.value)}
+              className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
+              type="text"
+              placeholder="to"
+            />
+          </div>
+          <div className=" pt-2 ">
+            <input
+              onChange={(e) => setAmount(Number(e.target.value))}
+              className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
+              type="text"
+              placeholder="Amount"
+            />
+          </div>
+          <button
+            onClick={transferSol}
+            className=" mt-2  ml-3 font-bold rounded-sm bg-[#512da8] p-1.5 px-9"
+          >
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
