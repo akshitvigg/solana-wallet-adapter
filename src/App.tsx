@@ -64,7 +64,11 @@ function App() {
                   sign message
                 </button>
                 <button
-                  className=" px-10 mr-1 rounded-md hover:bg-zinc-700 text-white "
+                  className={` px-10 mr-1 rounded-md ${
+                    type === "sign"
+                      ? " bg-white text-black"
+                      : "hover:bg-zinc-700 text-white"
+                  }`}
                   onClick={() => {
                     setType("balance");
                   }}
