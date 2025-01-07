@@ -30,7 +30,7 @@ export const Airdrop = () => {
       <div className="  flex mt-4 justify-center">
         <input
           onChange={(e) => setInputVal(Number(e.target.value))}
-          className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
+          className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg "
           type="text"
           placeholder="SOL"
         />
