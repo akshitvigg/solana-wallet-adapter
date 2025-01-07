@@ -29,5 +29,5 @@ export const Getbalance = () => {
     }
   }, [wallet.publicKey, connection]);
 
-  return <div className=" text-white">{balance} SOL</div>;
+  return <div className=" mt-4 text-white">{balance} SOL</div>;
 };
