@@ -27,7 +27,7 @@ export const Signmsg = () => {
 
   return (
     <div className=" text-white  mt-2">
-      <p className="">Type Your Message To Be Signed</p>
+      <p className=" text-center">Type Your Message To Be Signed</p>
       <input
         className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg "
         ref={inputRef}
