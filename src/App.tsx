@@ -20,13 +20,16 @@ function App() {
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className=" font-poppins min-h-screen flex items-center justify-center bg-[url(../public/bg.png)] ">
+          <div className=" font-poppins  min-h-screen flex pt-44 justify-center bg-[url(../public/bg.png)] ">
             <div className=" ">
-              <div className="pb-2 gap-2 flex justify-center ">
+              <p className=" text-white text-4xl font-bold">
+                Best Wallet adapter you will ever use
+              </p>
+              <div className="pb-2 gap-6 pt-10 flex justify-center ">
                 <WalletMultiButton />
                 <WalletDisconnectButton />
               </div>
-              <div className=" bg-zinc-800 rounded-md  py-2.5 w-[690px] flex justify-center">
+              <div className=" bg-zinc-800 rounded-md mt-6   py-2.5 w-[690px] flex justify-center">
                 <button
                   className={` py-2 px-10 mr-1 rounded-md ${
                     type === "airdrop"
@@ -76,10 +79,12 @@ function App() {
                   Get Balance
                 </button>
               </div>
-              {type === "airdrop" && <Airdrop />}
-              {type === "transaction" && <TransferSol />}
-              {type === "balance" && <Getbalance />}
-              {type === "sign" && <Signmsg />}
+              <div className=" pt-8">
+                {type === "airdrop" && <Airdrop />}
+                {type === "transaction" && <TransferSol />}
+                {type === "balance" && <Getbalance />}
+                {type === "sign" && <Signmsg />}
+              </div>
             </div>
           </div>
         </WalletModalProvider>
