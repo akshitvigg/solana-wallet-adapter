@@ -29,13 +29,13 @@ function App() {
               <div className=" flex justify-between  py-8 bg-zinc-900/40 border border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
                 <img className="ml-10" src={solanaLogo} width={150} alt="" />
                 <div className=" flex items-center gap-2  mr-10">
-                  <IconMoon color={` ${!themeType ? "yellow" : "white"}`} />
+                  <IconMoon color={` ${!themeType ? "#14F195" : "white"}`} />
                   <Switch
                     onClick={() => {
                       setThemeType(!themeType);
                     }}
                   />
-                  <IconSun color={` ${themeType ? "yellow" : "white"}`} />
+                  <IconSun color={` ${themeType ? "#14F195" : "white"}`} />
                 </div>
               </div>
             </div>
@@ -48,9 +48,9 @@ function App() {
                   <WalletMultiButton />
                   <WalletDisconnectButton />
                 </div>
-                <div className=" bg-zinc-800 rounded-md mt-6   py-2.5 w-[690px] flex justify-center">
+                <div className=" bg-zinc-800 rounded-lg mt-6   py-2.5 w-[690px] flex justify-center">
                   <button
-                    className={` py-2 px-10 mr-1 rounded-md ${
+                    className={` py-2 px-10 mr-1 rounded-lg ${
                       type === "airdrop"
                         ? " bg-white text-black"
                         : "hover:bg-zinc-700 text-white"
