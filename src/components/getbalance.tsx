@@ -1,7 +1,7 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useEffect, useState } from "react";
-import solLogo from "../../public/sologo.png";
+import solLogo from "../../public/solLogo.png";
 
 export const Getbalance = () => {
   const wallet = useWallet();
