@@ -67,7 +67,7 @@ export const Getbalance = () => {
             </p>
             <span className="text-center dark:text-white  text-zinc-700 text-lg font-bold">
               {balance}
-            </span>{" "}
+            </span>
             SOL
           </p>
         </div>
