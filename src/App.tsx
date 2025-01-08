@@ -20,10 +20,10 @@ function App() {
             <Navbar />
             <div className="flex pt-24 justify-center ">
               <div>
-                <p className=" text-center dark:text-white text-zinc-800 text-5xl font-bold">
+                <p className=" text-center dark:text-white text-zinc-800 text-4xl sm:text-5xl font-bold">
                   Effortless Wallet Integration <br /> for Solana Users
                 </p>
-                <div className="pb-2 gap-6 pt-10 flex justify-center ">
+                <div className="pb-2 gap-3  sm:gap-6 pt-10 flex justify-center ">
                   <WalletMultiButton style={{ borderRadius: "8px" }} />
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
