@@ -10,6 +10,7 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
+import { Toaster } from "@/components/ui/toaster";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className=" font-poppins  transition-all duration-200 min-h-screen bg-[url(/lbg1.png)]  dark:bg-[url(/bg.png)] ">
+            <Toaster />
             <Navbar />
             <div className="flex pt-24 justify-center ">
               <div>
