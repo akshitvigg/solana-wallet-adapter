@@ -5,7 +5,7 @@ import { Getbalance } from "./getbalance";
 import { Signmsg } from "./signmessage";
 
 export const BtnsBar = () => {
-  const [type, setType] = useState("");
+  const [type, setType] = useState<string>("");
 
   return (
     <div className="w-full">
