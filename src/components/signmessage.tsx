@@ -2,29 +2,66 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useRef, useState } from "react";
 import { ed25519 } from "@noble/curves/ed25519";
 import bs58 from "bs58";
+import { useToast } from "@/hooks/use-toast";
+import Loader from "./loader";
 
 export const Signmsg = () => {
   const { signMessage, publicKey } = useWallet();
   const inputRef = useRef<HTMLInputElement>(null);
   const [signature, setSignature] = useState<any>("");
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const { toast } = useToast();
 
   const signmsg = async () => {
-    if (!publicKey) {
-      alert("wallet not connected ");
-      return;
-    }
-    if (!signMessage) {
-      alert("wallet does not support message signing");
-      return;
-    }
-    const encodedmsg = new TextEncoder().encode(inputRef.current?.value);
-    const sign = await signMessage(encodedmsg);
+    setLoading(true);
+    try {
+      if (!publicKey) {
+        toast({
+          variant: "destructive",
+          title: `Wallet is not connected.`,
+        });
+        return;
+      }
+      if (!inputRef.current?.value) {
+        toast({
+          variant: "destructive",
+          title: `Message cannot be empty.`,
+        });
+        return;
+      }
 
-    if (!ed25519.verify(sign, encodedmsg, publicKey.toBytes())) {
-      alert("message signature invalid");
+      if (!signMessage) {
+        toast({
+          variant: "destructive",
+          title: `Message signing is not supported by the selected wallet.`,
+        });
+        return;
+      }
+      const encodedmsg = new TextEncoder().encode(inputRef.current?.value);
+
+      const sign = await signMessage(encodedmsg);
+
+      if (!ed25519.verify(sign, encodedmsg, publicKey.toBytes())) {
+        toast({
+          variant: "destructive",
+          title: `Message signature is invalid`,
+        });
+      }
+
+      setSignature(bs58.encode(sign));
+
+      toast({
+        title: `Message signed successfully.`,
+        description: bs58.encode(sign),
+      });
+    } catch (e) {
+      toast({
+        variant: "destructive",
+        title: `An error occured while signing message.`,
+      });
+    } finally {
+      setLoading(false);
     }
-    setSignature(bs58.encode(sign));
-    alert(`message signature ${bs58.encode(sign)}`);
   };
 
   return (
@@ -34,6 +71,7 @@ export const Signmsg = () => {
       </p>
       <div className=" mt-4 flex justify-center">
         <input
+          required
           className="py-3 pl-10 outline-none sm:w-96 w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
           ref={inputRef}
           type="text"
@@ -43,7 +81,7 @@ export const Signmsg = () => {
           onClick={signmsg}
           className="ml-2 sm:ml-3 text-xl text-white hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] px-10  sm:px-12"
         >
-          Sign
+          {isLoading ? <Loader /> : "Sign"}
         </button>
       </div>
 
