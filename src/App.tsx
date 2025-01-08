@@ -13,42 +13,25 @@ import { Getbalance } from "./components/getbalance";
 import { TransferSol } from "./components/transferSol";
 import { Signmsg } from "./components/signmessage";
 import { useState } from "react";
-import solanaLogo from "/solanaLogo.png";
-import { IconMoon, IconSun } from "@tabler/icons-react";
-import { Switch } from "@/components/ui/switch";
+import { Navbar } from "./components/navbar";
 
 function App() {
   const [type, setType] = useState<string>("");
 
-  const [isDarktheme, setDarktheme] = useState<boolean>(false);
-
-  const toggleTheme = () => {
-    setDarktheme(!isDarktheme);
-    document.querySelector("html")?.classList.toggle("dark");
-  };
   return (
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className=" font-poppins  min-h-screen bg-[url(/lbg1.png)]  dark:bg-[url(/bg.png)] ">
-            <div className=" flex justify-center">
-              <div className=" flex justify-between  py-8 bg-white/20 dark:bg-zinc-900/40 border border-gray-300 dark:border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
-                <img className="ml-10" src={solanaLogo} width={150} alt="" />
-                <div className=" flex items-center gap-2  mr-10">
-                  <IconMoon color={` ${!isDarktheme ? "#14F195" : "gray"}`} />
-                  <Switch onClick={toggleTheme} />
-                  <IconSun color={` ${isDarktheme ? "#14F195" : "gray"}`} />
-                </div>
-              </div>
-            </div>
+            <Navbar />
             <div className="flex pt-44 justify-center ">
               <div>
                 <p className=" dark:text-white text-black text-4xl font-bold">
                   Best Wallet adapter you will ever use
                 </p>
                 <div className="pb-2 gap-6 pt-10 flex justify-center ">
-                  <WalletMultiButton />
-                  <WalletDisconnectButton />
+                  <WalletMultiButton style={{ borderRadius: "8px" }} />
+                  <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <div className=" bg-zinc-800 rounded-md mt-6   py-2.5 w-[690px] flex justify-center">
                   <button
