@@ -43,8 +43,8 @@ export const Getbalance = () => {
   }, [wallet.publicKey, connection]);
 
   return (
-    <div className="flex justify-center mt-4 text-white">
-      <div className="bg-zinc-800 border-2 border-zinc-700 backdrop-blur-xl rounded-xl w-64 p-4">
+    <div className="flex justify-center mt-4 dark:text-white ">
+      <div className="bg-gray-100 border-gray-300  dark:bg-zinc-800 border-2 dark:border-zinc-700 backdrop-blur-xl rounded-xl w-64 p-4">
         <div className="flex justify-center items-center space-x-2">
           <img src={solLogo} width={60} alt="Solana Logo" />
 
@@ -55,11 +55,14 @@ export const Getbalance = () => {
                 <IconRefresh
                   onClick={fetchBalance}
                   size={22}
-                  className=" hover:scale-105 active:scale-95 rounded-r-xl"
+                  className=" text-zinc-400 hover:scale-105 active:scale-95 rounded-r-xl"
                 />
               </span>
             </p>
-            <span className="text-center text-lg font-bold">{balance}</span> SOL
+            <span className="text-center dark:text-white  text-zinc-700 text-lg font-bold">
+              {balance}
+            </span>{" "}
+            SOL
           </p>
         </div>
       </div>
