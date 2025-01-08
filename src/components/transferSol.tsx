@@ -62,7 +62,7 @@ export const TransferSol = () => {
   return (
     <div className=" text-zinc-700 dark:text-white  ">
       <p className=" text-center text-2xl sm:text-3xl font-bold">
-        Send Some Sol
+        Send Some SOL
       </p>
       <div className=" flex mt-2 justify-center">
         <div>
