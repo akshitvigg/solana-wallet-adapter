@@ -24,7 +24,7 @@ function App() {
     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className=" font-poppins  min-h-screen  bg-[url(../public/bg.png)] ">
+          <div className=" font-poppins  min-h-screen  bg-[url(../public/lbg1.png)] ">
             <div className=" flex justify-center">
               <div className=" flex justify-between  py-8 bg-zinc-900/40 border border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
                 <img className="ml-10" src={solanaLogo} width={150} alt="" />
