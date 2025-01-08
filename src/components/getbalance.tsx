@@ -3,11 +3,13 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useEffect, useState } from "react";
 import solLogo from "/solLogo.png";
 import { IconRefresh } from "@tabler/icons-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const Getbalance = () => {
   const wallet = useWallet();
   const { connection } = useConnection();
   const [balance, setBalance] = useState<number>(0);
+  const { toast } = useToast();
 
   const fetchBalance = async () => {
     try {
@@ -17,6 +19,10 @@ export const Getbalance = () => {
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      toast({
+        title: `SOL balance loaded successfully.`,
+      });
     }
   };
 
