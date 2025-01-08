@@ -12,7 +12,7 @@ export const Navbar = () => {
   };
   return (
     <div className=" flex justify-center">
-      <div className=" flex justify-between  py-8 bg-white/20 dark:bg-zinc-900/40 border border-gray-300 dark:border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
+      <div className=" shadow-md flex justify-between  py-8 bg-white/20 dark:bg-zinc-900/40 border border-gray-300 dark:border-zinc-700 rounded-2xl backdrop-blur-xl  translate-y-5 w-[1000px] ">
         <img className="ml-10" src={solanaLogo} width={150} alt="" />
         <div className=" flex items-center gap-2  mr-10">
           <IconMoon color={` ${!isDarktheme ? "#14F195" : "gray"}`} />
