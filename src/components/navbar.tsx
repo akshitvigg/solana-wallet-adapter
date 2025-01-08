@@ -2,8 +2,6 @@ import { useState } from "react";
 import solanaLogo from "/solanaLogo.png";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { Switch } from "@/components/ui/switch";
-import solWord from "/download.png";
-import sol from "/solanaLogoMark.png";
 
 export const Navbar = () => {
   const [isDarktheme, setDarktheme] = useState<boolean>(false);
