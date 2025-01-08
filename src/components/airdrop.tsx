@@ -1,26 +1,50 @@
+import { useToast } from "@/hooks/use-toast";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { useState } from "react";
+import Loader from "./loader";
 
 export const Airdrop = () => {
   const wallet = useWallet();
   const { connection } = useConnection();
   const [inputVal, setInputVal] = useState<number>(0);
+  const { toast } = useToast();
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const sendAirdrop = async () => {
     if (!wallet.publicKey) {
-      alert("Wallet is not connected!");
+      toast({
+        variant: "destructive",
+        title: `Wallet is not connected.`,
+      });
       return;
     }
-
+    setLoading(true);
     try {
+      if (!inputVal) {
+        toast({
+          variant: "destructive",
+          title: `Input field cannot be empty.`,
+        });
+        return;
+      }
+
       const signature = await connection.requestAirdrop(
         wallet.publicKey,
         inputVal * 1000000000
       );
-      alert(`Airdrop successful! Signature: ${signature}`);
+      toast({
+        title: `Airdrop successful. You’ve received the tokens!`,
+        description: signature,
+      });
     } catch (error) {
       console.error("Airdrop failed:", error);
-      alert("Airdrop failed. Check console for details.");
+      toast({
+        variant: "destructive",
+        title: "Airdrop failed. Please try again.",
+        description: "Check console for details",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -40,7 +64,7 @@ export const Airdrop = () => {
           className="sm:ml-3 ml-2 text-xl text-white hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] px-10  sm:px-12"
           onClick={sendAirdrop}
         >
-          Get
+          {isLoading ? <Loader /> : "Get"}
         </button>
       </div>
     </div>
