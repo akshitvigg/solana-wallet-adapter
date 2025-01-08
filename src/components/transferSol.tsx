@@ -1,3 +1,4 @@
+import { useToast } from "@/hooks/use-toast";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import {
   LAMPORTS_PER_SOL,
@@ -6,16 +7,35 @@ import {
   Transaction,
 } from "@solana/web3.js";
 import { useState } from "react";
+import Loader from "./loader";
 
 export const TransferSol = () => {
   const [to, setTo] = useState<string>("");
   const [amount, setAmount] = useState<number>(0);
   const wallet = useWallet();
   const { connection } = useConnection();
+  const { toast } = useToast();
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const transferSol = async () => {
     const transaction = new Transaction();
+
     try {
+      if (!to) {
+        toast({
+          variant: "destructive",
+          title: `Recipient field cannot be empty.`,
+        });
+        return;
+      }
+      if (!amount) {
+        toast({
+          variant: "destructive",
+          title: `Amount field cannot be empty.`,
+        });
+        return;
+      }
+
       transaction.add(
         SystemProgram.transfer({
           //@ts-ignore
@@ -24,21 +44,25 @@ export const TransferSol = () => {
           lamports: amount * LAMPORTS_PER_SOL,
         })
       );
+      setLoading(true);
 
       await wallet.sendTransaction(transaction, connection);
 
-      alert("sol sended");
+      toast({
+        title: `SOL transferred successfully.`,
+      });
     } catch (e) {
       console.log(e);
-      alert("error occured while sending sol");
+      alert("error occured while sending SOL");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className=" text-zinc-700 dark:text-white  ">
       <p className=" text-center text-2xl sm:text-3xl font-bold">
-        {" "}
-        Send Some Sol{" "}
+        Send Some Sol
       </p>
       <div className=" flex mt-2 justify-center">
         <div>
@@ -63,7 +87,7 @@ export const TransferSol = () => {
               onClick={transferSol}
               className=" mt-2 text-white text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] py-2.5  sm:w-96 w-80 sm:ml-0 ml-2"
             >
-              Send
+              {isLoading ? <Loader /> : "Send"}
             </button>
           </div>
         </div>
