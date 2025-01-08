@@ -35,14 +35,14 @@ export const TransferSol = () => {
   };
 
   return (
-    <div className=" text-white  ">
+    <div className=" text-zinc-700 dark:text-white  ">
       <p className=" text-center text-3xl font-bold"> Send Some Sol </p>
       <div className=" flex mt-2 justify-center">
         <div>
           <div className=" pt-2 ">
             <input
               onChange={(e) => setTo(e.target.value)}
-              className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
+              className="py-3 pl-10 outline-none w-96 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg"
               type="text"
               placeholder="to"
             />
@@ -50,7 +50,7 @@ export const TransferSol = () => {
           <div className=" pt-2 ">
             <input
               onChange={(e) => setAmount(Number(e.target.value))}
-              className="py-3 pl-10 outline-none w-96 bg-transparent border-zinc-700 border-2  rounded-lg p-1.5"
+              className="py-3 pl-10 outline-none w-96 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg"
               type="text"
               placeholder="Amount"
             />
@@ -58,7 +58,7 @@ export const TransferSol = () => {
           <div className=" flex justify-center">
             <button
               onClick={transferSol}
-              className=" mt-2   text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] py-2.5  w-96"
+              className=" mt-2 text-white text-xl hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] py-2.5  w-96"
             >
               Send
             </button>
