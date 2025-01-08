@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nextui-org/spinner": "^2.2.6",
     "@radix-ui/react-switch": "^1.1.2",
+    "@radix-ui/react-toast": "^1.2.4",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
