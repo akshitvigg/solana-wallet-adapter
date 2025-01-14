@@ -36,6 +36,9 @@ function App() {
                 <BtnsBar />
               </div>
             </div>
+            <div className=" mt-52  ">
+              <p className=" text-center text-zinc-400"> Made by Akshit </p>
+            </div>
           </div>
         </WalletModalProvider>
       </WalletProvider>
