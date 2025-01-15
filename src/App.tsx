@@ -11,6 +11,8 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
+import { MoveDiagonal } from "lucide-react";
+import { IconArrowsDiagonal } from "@tabler/icons-react";
 
 function App() {
   return (
@@ -37,7 +39,15 @@ function App() {
               </div>
             </div>
             <div className=" mt-52  ">
-              <p className=" text-center text-zinc-400"> Made by Akshit </p>
+              <p className=" text-center text-zinc-400">
+                Made by{" "}
+                <a
+                  className=" hover:underline"
+                  href="https://github.com/akshitvigg"
+                >
+                  Akshit
+                </a>
+              </p>
             </div>
           </div>
         </WalletModalProvider>
