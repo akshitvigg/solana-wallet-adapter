@@ -11,8 +11,6 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
-import { MoveDiagonal } from "lucide-react";
-import { IconArrowsDiagonal } from "@tabler/icons-react";
 
 function App() {
   return (
