@@ -12,8 +12,19 @@ import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
 import { TokenLaunchpad } from "./components/CreateToken";
+import { useMemo, useState } from "react";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { clusterApiUrl } from "@solana/web3.js";
 
 function App() {
+  const [token, setToken] = useState(null);
+  // const [mintDone, setMintDone] = useState(false);
+  // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
+  const network = WalletAdapterNetwork.Devnet;
+
+  // You can also provide a custom RPC endpoint.
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
   return (
     <ConnectionProvider
       endpoint={
@@ -35,7 +46,12 @@ function App() {
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <BtnsBar />
-                <TokenLaunchpad />
+                <TokenLaunchpad
+                  onTokenCreate={(tokenMint: any) => {
+                    setToken(tokenMint);
+                  }}
+                />
+                {/* {token && token.toBase58()} */}
               </div>
             </div>
             <div className=" mt-52  ">
