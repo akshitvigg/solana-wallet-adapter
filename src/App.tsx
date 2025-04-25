@@ -15,10 +15,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { useMemo, useState } from "react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
+import { MintToken } from "./components/MintToken";
 
 function App() {
   const [token, setToken] = useState(null);
-  // const [mintDone, setMintDone] = useState(false);
+  const [mintDone, setMintDone] = useState(false);
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Devnet;
 
@@ -45,7 +46,14 @@ function App() {
                   <WalletMultiButton style={{ borderRadius: "8px" }} />
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
-                <BtnsBar />
+                <BtnsBar setToken={setToken} token={token} />
+
+                {token && (
+                  <MintToken
+                    onDone={() => setMintDone(true)}
+                    mintAddress={token}
+                  />
+                )}
               </div>
             </div>
             <div className=" mt-52  ">
