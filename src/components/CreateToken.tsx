@@ -57,7 +57,7 @@ export const TokenLaunchpad = ({ onTokenCreate }: any) => {
           placeholder="Symbol"
         />
       </div>
-      <div className="">
+      <div className=" space-y-2">
         <input
           className="py-3 pl-10 outline-none sm:w-[350px] w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
           type="text"
