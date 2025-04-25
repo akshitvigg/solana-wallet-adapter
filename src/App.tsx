@@ -35,12 +35,12 @@ function App() {
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <BtnsBar />
-                <TokenLaunchpad />
+                {/* <TokenLaunchpad /> */}
               </div>
             </div>
             <div className=" mt-52  ">
               <p className=" text-center text-zinc-400">
-                Made by
+                Made by{" "}
                 <a
                   className=" hover:underline"
                   href="https://github.com/akshitvigg"
