@@ -35,7 +35,7 @@ function App() {
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <BtnsBar />
-                {/* <TokenLaunchpad /> */}
+                <TokenLaunchpad />
               </div>
             </div>
             <div className=" mt-52  ">
