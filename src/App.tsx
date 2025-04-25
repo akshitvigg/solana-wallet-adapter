@@ -11,6 +11,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
+import { TokenLaunchpad } from "./components/CreateToken";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <BtnsBar />
+                <TokenLaunchpad />
               </div>
             </div>
             <div className=" mt-52  ">
