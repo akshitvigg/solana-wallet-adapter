@@ -38,7 +38,7 @@ function App() {
             </div>
             <div className=" mt-52  ">
               <p className=" text-center text-zinc-400">
-                Made by{" "}
+                Made by
                 <a
                   className=" hover:underline"
                   href="https://github.com/akshitvigg"
