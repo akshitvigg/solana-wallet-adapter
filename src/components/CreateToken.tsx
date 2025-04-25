@@ -43,38 +43,39 @@ export const TokenLaunchpad = ({ onTokenCreate }: any) => {
     onTokenCreate(mintKeypair.publicKey);
   }
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <h1>Solana Token Launchpad</h1>
-      <input className="inputText" type="text" placeholder="Name"></input>{" "}
+    <div className=" text-white gap-2 flex justify-center ">
+      <div className=" space-y-2">
+        <input
+          className="py-3 pl-10 outline-none sm:w-[350px] w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
+          type="text"
+          placeholder="Name"
+        />
+        <br />
+        <input
+          className="py-3 pl-10 outline-none sm:w-[350px] w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
+          type="text"
+          placeholder="Symbol"
+        />
+      </div>
+      <div className="">
+        <input
+          className="py-3 pl-10 outline-none sm:w-[350px] w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
+          type="text"
+          placeholder="IMAGE URL"
+        />
+        <br />
+        <input
+          className="py-3 pl-10 outline-none sm:w-[350px] w-56 bg-white backdrop-blur-xl dark:bg-zinc-800/70 dark:border-zinc-700 border-gray-300 border-2  rounded-lg "
+          type="text"
+          placeholder="initial supply"
+        />
+      </div>
       <br />
-      <input
-        className="inputText"
-        type="text"
-        placeholder="Symbol"
-      ></input>{" "}
-      <br />
-      <input
-        className="inputText"
-        type="text"
-        placeholder="Image URL"
-      ></input>{" "}
-      <br />
-      <input
-        className="inputText"
-        type="text"
-        placeholder="Initial Supply"
-      ></input>{" "}
-      <br />
-      <button onClick={createtoken} className="btn">
-        Create a token
+      <button
+        className="sm:ml-3 ml-2 text-xl text-white hover:bg-[#1a1f2e] font-medium rounded-lg bg-[#512da8] px-10 py-2.5 sm:px-12"
+        onClick={createtoken}
+      >
+        Create
       </button>
     </div>
   );

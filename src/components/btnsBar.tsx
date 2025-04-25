@@ -3,8 +3,9 @@ import { Airdrop } from "./airdrop";
 import { TransferSol } from "./transferSol";
 import { Getbalance } from "./getbalance";
 import { Signmsg } from "./signmessage";
+import { TokenLaunchpad } from "./CreateToken";
 
-export const BtnsBar = () => {
+export const BtnsBar = ({ setToken }: any) => {
   const [type, setType] = useState<string>("");
 
   return (
@@ -59,6 +60,18 @@ export const BtnsBar = () => {
           >
             Get Balance
           </button>
+          <button
+            className={`py-2 px-4 md:px-10 rounded-md ${
+              type === "createtoken"
+                ? "bg-white shadow-md text-black"
+                : "hover:bg-gray-200 dark:hover:bg-zinc-700 dark:text-white text-gray-500"
+            }`}
+            onClick={() => {
+              setType("createtoken");
+            }}
+          >
+            Create Token
+          </button>
         </div>
       </div>
       <div className="pt-8 mb-16">
@@ -66,6 +79,13 @@ export const BtnsBar = () => {
         {type === "transaction" && <TransferSol />}
         {type === "balance" && <Getbalance />}
         {type === "sign" && <Signmsg />}
+        {type === "createtoken" && (
+          <TokenLaunchpad
+            onTokenCreate={(tokenMint: any) => {
+              setToken(tokenMint);
+            }}
+          />
+        )}
       </div>
     </div>
   );
