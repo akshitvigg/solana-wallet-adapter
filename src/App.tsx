@@ -12,21 +12,14 @@ import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
 
-import { useEffect, useMemo, useState } from "react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { clusterApiUrl } from "@solana/web3.js";
+import { useEffect, useState } from "react";
+
 import { MintToken } from "./components/MintToken";
 import "aos/dist/aos.css";
 import Aos from "aos";
 
 function App() {
   const [token, setToken] = useState(null);
-  const [mintDone, setMintDone] = useState(false);
-  // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Devnet;
-
-  // You can also provide a custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   useEffect(() => {
     Aos.init({
@@ -44,6 +37,7 @@ function App() {
         <WalletModalProvider>
           <div className=" font-poppins  transition-all duration-200 min-h-screen bg-[url(/lbg1.png)]  dark:bg-[url(/bg.png)] ">
             <Toaster />
+
             <Navbar />
             <div data-aos="zoom-in" className="flex pt-24 justify-center ">
               <div>
@@ -55,13 +49,6 @@ function App() {
                   <WalletDisconnectButton style={{ borderRadius: "8px" }} />
                 </div>
                 <BtnsBar setToken={setToken} token={token} />
-
-                {token && (
-                  <MintToken
-                    onDone={() => setMintDone(true)}
-                    mintAddress={token}
-                  />
-                )}
               </div>
             </div>
             <div className=" mt-52  ">
