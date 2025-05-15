@@ -21,6 +21,8 @@
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.98.2",
     "@tabler/icons-react": "^3.27.1",
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
     "buffer": "^6.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

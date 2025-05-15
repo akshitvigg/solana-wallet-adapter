@@ -12,10 +12,12 @@ import { Navbar } from "./components/navbar";
 import { BtnsBar } from "./components/btnsBar";
 import { Toaster } from "@/components/ui/toaster";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
 import { MintToken } from "./components/MintToken";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -26,6 +28,12 @@ function App() {
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
+  useEffect(() => {
+    Aos.init({
+      duration: 700,
+      once: true,
+    });
+  });
   return (
     <ConnectionProvider
       endpoint={
@@ -37,7 +45,7 @@ function App() {
           <div className=" font-poppins  transition-all duration-200 min-h-screen bg-[url(/lbg1.png)]  dark:bg-[url(/bg.png)] ">
             <Toaster />
             <Navbar />
-            <div className="flex pt-24 justify-center ">
+            <div data-aos="zoom-in" className="flex pt-24 justify-center ">
               <div>
                 <p className=" text-center dark:text-white text-zinc-800 text-4xl sm:text-5xl font-bold">
                   Effortless Wallet Integration <br /> for Solana Users
